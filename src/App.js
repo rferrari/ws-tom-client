@@ -12,7 +12,7 @@ class App extends Component {
       // wsUrl: "",
       isConnected: false,
       isAuthorized: false,
-      secretKey: "talktom",
+      secretKey: "",
       name: "Visitor",
     };
     // this.nameInputRef = React.createRef(); // Create a ref for the name input
@@ -88,9 +88,7 @@ class App extends Component {
   }
 
   checkSecretKey() {
-    console.log("checking");
     if (this.wsUrlInputRef.current.value !== "") {
-      console.log("ok");
       this.ws = new WebSocket(this.wsUrlInputRef.current.value);
       this.addEventListeners();
       this.setState({ isAuthorized: true });
